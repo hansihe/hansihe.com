@@ -1,0 +1,67 @@
+tech_labels:
+    electronics: ["Electronics", "#888888", "#ffffff", ""]
+    haskell: ["Haskell", "#6144b3", "#ffffff", "https://www.haskell.org/"]
+    python: ["Python", "#3776ab", "#ffffff", "https://python.org/"]
+    elixir: ["Elixir", "#4e2a8e", "#ffffff", "http://elixir-lang.org/"]
+    rust: ["Rust", "#f74c00", "#ffffff", "http://rust-lang.org/"]
+    javascript: ["Javascript", "#f7df1e", "#000000", "https://en.wikipedia.org/wiki/JavaScript"]
+    react: ["React", "", "", "https://facebook.github.io/react/"]
+    verilog: ["Verilog", "", "", "http://www.verilog.com/"]
+    elm: ["Elm", "#60b5cc", "#000000", "http://elm-lang.org/"]
+    nodejs: ["Node.js", "#43853d", "#ffffff", "https://nodejs.org/"]
+
+entries:
+    - title: "Rustler"
+      status: "Active"
+      link: "https://github.com/hansihe/Rustler"
+      labels: [rust]
+      description: >
+          Rust library for writing safe NIFs (FFI) for Erlang and Elixir.
+    - title: "Homebrew Computer"
+      status: "Active"
+      link: "https://github.com/hansihe/ttl_cpu"
+      labels: [electronics, verilog, haskell, python]
+      description: >
+          Computer designed and built from the ground up. Uses only simple 7400 logic.
+    - title: "SeriesSearch"
+      status: "Done"
+      link: "http://streamdet.no"
+      labels: [elixir, elm]
+      description: >
+          Website for finding movies and series on Norwegian streaming sites.
+    - title: "McEx"
+      status: "Hiatus"
+      link: "https://github.com/McEx/McEx"
+      labels: [elixir, rust]
+      description: >
+          Experimental highly distributed game server for Minecraft.
+    - title: "Voxel-Worldgen"
+      status: "Hiatus"
+      link: "https://github.com/hansihe/voxel_worldgen"
+      labels: [rust]
+      description: >
+          Utilities for generating voxel worlds.
+    - title: "Elixir-Protodef"
+      status: "Maintained"
+      link: "https://github.com/ProtoDef-io/elixir-protodef"
+      labels: [elixir]
+      description: >
+          Library for compiling [ProtoDef](https://github.com/ProtoDef-io/ProtoDef) definitions to efficient code.
+    - title: "McProtocol"
+      status: "Hiatus"
+      link: "https://github.com/McEx/McProtocol"
+      labels: [elixir]
+      description: >
+          Implementation of the Minecraft protocol in a functional way.
+    - title: "TISEmu"
+      status: "Done"
+      link: "https://github.com/hansihe/TISEmu"
+      labels: [javascript, react]
+      description: >
+          Online emulator for the TIS-100.
+    - title: "CollaborativeWiki"
+      status: "Abandoned"
+      link: "https://github.com/hansihe/CollaborativeWiki"
+      labels: [javascript, react, nodejs]
+      description: >
+          Realtime collaborative wiki synchronized by Operational Transformation.

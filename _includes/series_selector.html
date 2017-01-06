@@ -1,0 +1,19 @@
+<div>
+    {% for post in page.series_posts %}
+
+    {% if post.id == page.id %}
+    {% assign is_self = true %}
+    {% endif %}
+
+    <a class="{% if is_self == true %}self_link{% endif %}" href="{{ post.url }}">
+        {{ post.series.short_title }}
+    </a>
+
+    {% endfor %}
+</div>
+
+<style>
+ .series_container {
+     border: solid 1px #000;
+ }
+</style>

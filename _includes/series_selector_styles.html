@@ -1,0 +1,11 @@
+<div>
+    {% for post in series_posts %}
+    {{ post.data["series"]["short_title"] }}
+    {% endfor %}
+</div>
+
+<style>
+ .series_container {
+     border: solid 1px #000;
+ }
+</style>

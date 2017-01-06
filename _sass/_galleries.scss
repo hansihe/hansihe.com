@@ -1,0 +1,9 @@
+ .gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .gallery > .gallery-item {
+     padding: 5px;
+ }
