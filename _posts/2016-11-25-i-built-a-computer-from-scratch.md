@@ -4,7 +4,9 @@ title: "I built a computer from scratch"
 date: 2016-11-25 05:35:15 +0200
 ---
 
+{% comment %}
 ###### Video
+{% endcomment %}
 
 Ever since I started programming, I have been interested in how the stack works all the way down to the bottom. Although I don’t know the specifics on a lot of things, I like to think I have developed a reasonably complete understanding of how a modern computer works all the way down to the assembly level. The levels below that have always been more or less shrouded in a thick fog of mystery for me. A couple of months ago I decided to do something about that, and what better way to learn something new then to jump straight into the deep end. I decided to design and build my own computer from scratch.
 
@@ -27,7 +29,9 @@ ttlcpu-plans/display.jpg::Display module diagram
 
 When deciding what parts to use for the computer, I decided to limit myself to using only 7400 series logic (with the exception of memory). When I decided I was mostly happy with the design itself I ordered the parts from Mouser. I made sure to order plenty of spares of everything so that I could change and improve the design as I went along.
 
-<img src="/assets/galleries/ttlcpu/pile_of_parts.jpg" alt="Box of electronics parts"/>
+{% gallery pile-of-parts %}
+ttlcpu/pile_of_parts.jpg::Box of electronics parts
+{% endgallery %}
 
 ## Building
 
@@ -37,21 +41,29 @@ The computer itself ended up being split into three different PCBs that (more or
 
 * What the ALU does is fairly self-explanatory, it does arithmetic and logic. My design is capable of adding, subtracting, bitwise AND, OR and XOR. The ALU board contains only combinatorial logic, it’s outputs depend solely on the input signals. Because of this, I built this board first.
 
-<img src="/assets/galleries/ttlcpu/alu_board_annotated.jpg" alt="Annotated picture of ALU"/>
+{% gallery alu-board-annotated %}
+ttlcpu/alu_board_annotated.jpg::Annotated picture of ALU
+{% endgallery %}
 
 * The second board I built was the datapath board. The datapath contains mostly stateful logic, including the RAM memory, registers, and I/O logic.
 
-###### Annotated picture of datapath
+{% gallery alu-board-annotated %}
+ttlcpu/datapath_board_annotated.jpg::Annotated picture of Datapath
+{% endgallery %}
 
 * The third board is probably the most interesting one, the control board. Although the ALU and datapath contains most of the logic that deals with data being processed, there needs to be something that asserts the correct control signals at the correct time to orchestrate the actual data processing. This is what the control board does. Although an old computer would probably use a combination of combinatorial logic and a state machine, this would significantly complicate and increase the amount of control logic needed. I decided to cheat a bit and use modern EEPROM memory (the same type of chips I use to actually store the programs) to implement a form of microcode. This enables me to completely alter the instruction set of the processor simply by flashing a new microcode program.
 
-###### Annotated picture of control
+{% gallery control-board-annotated %}
+ttlcpu/control_board_annotated.jpg::Annotated picture of Control
+{% endgallery %}
 
 ## Testing
 
 I knew I needed a way to automatically test different functions of the different boards as I went along. For this purpose I ordered a STM32 Nucleo board along with the other parts. After building a simple logic-level converter board, and writing some firmware, this enabled me to write test suites in python for validating the actual physical boards. This helped me a lot while building both the ALU and the datapath. I also implemented a EEPROM programmer for programming the memory chips.
 
+{% comment %}
 ###### Picture of stm32 debugger with e2prom programmer
+{% endcomment %}
 
 ## Making it work
 

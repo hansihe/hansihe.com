@@ -5,6 +5,9 @@ date:   2016-07-26 13:42:38 +0200
 categories: erlang elixir c
 ---
 
+* TOC
+{:toc}
+
 In this article we look at a completely reckless and unsafe (but fun) way to work around some of the issues with running native code from Erlang. This involves allocating a new C stack and switching to it, then interrupting execution when a certain amount of time has passed and switching back to the original thread, for then to resume execution where we left off later at a later point in time.
 
 Note that is is purely done for fun, is completely nonportable, and does quite a few things that could crash or deadlock the Erlang VM if you so much as look at it the wrong way. What's not to love :)
@@ -208,5 +211,5 @@ This technique may work if the erlang VM itself supports it, but as is, it is un
 * Threaded NIFs. You can manually move your computation into your own thread. This could solve both the stability, performance and latency problems, but introduces more code complexity for the user.
 * Ports. With ports you can communicate with an external program through stdin and stdout.
 
-#### Sources
+## Sources
 * [LuaJit CoCo](http://coco.luajit.org/) - I used this as a reference for implementing the context switching code.
